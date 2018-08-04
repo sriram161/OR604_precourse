@@ -106,3 +106,4 @@ venv.bak/
 # User defined ignore patterns
 **.csv
 **.zip
+**.docx
