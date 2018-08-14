@@ -1,8 +1,6 @@
 from sqlalchemy import Column, Integer, String, Float, DateTime
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-
-base = declarative_base()
+from app.db.settings import base
 
 class Location(base):
     __tablename__ = 'location'

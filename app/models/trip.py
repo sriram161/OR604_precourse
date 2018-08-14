@@ -1,8 +1,6 @@
 from sqlalchemy import Column, String, DateTime, BigInteger
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-
-base = declarative_base()
+from app.db.settings import base
 
 class Trip(base):
     __tablename__ = 'trip'
