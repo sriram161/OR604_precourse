@@ -5,7 +5,9 @@ from app.models.location import Location
 from app.models.trip import Trip
 
 sqlite_engine = DbFactory.get_db_engine('SqliteDbEngine', 
-                                        "precourse_test.db", echo=True).get_database()
+                                        "precourse.db", echo=True).get_database()
 
 base = get_base()
-base.metadata.create_all(sqlite_engine)
+
+Location.__table__.create(sqlite_engine, checkfirst=True)
+Trip.__table__.create(sqlite_engine, checkfirst=True)
