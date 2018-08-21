@@ -18,13 +18,15 @@ dbfile = r'precourse_test.db' #Please give a new db file here.
 zip_file = r'Capital_BikeShare_Data.zip'
 location_file = r'Capital_Bike_Share_Locations.csv'
 
-# Answer 1,2 and 3
+# Answer 1
 create_tables(systemname, dbfile)
 
+# Answer 2
 load_location_table(data_path, location_file, systemname, dbfile)
 
 load_trip_table(data_path, zip_file, systemname, dbfile)
 
+# Answer 3
 count_records(systemname, dbfile)
 
 # Answer 4
@@ -35,4 +37,4 @@ neighbours = get_neighbour_stations(dist_dict, 31235, 5)
 print('Total neighbours: ', len(neighbours))
 
 # Answer 6
-print('Total trips: ', get_trip_count(31222 ,31235 , '2011-01-01', '2011-09-01'))
+print('Total trips: ', get_trip_count(31222, 31235, '2011-01-01', '2011-09-01', systemname, dbfile))
