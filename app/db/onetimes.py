@@ -29,12 +29,16 @@ def load_location_table(data_path, location_file, systemname, dbfile):
 def load_trip_table(data_path, zip_file, systemname, dbfile):
     with zipfile.ZipFile(data_path + zip_file) as zipf:
         row_id = count(1, 1)
+        file_count = 0
         for f_name in zipf.filelist:
+            record_count = 0
             with DBSession(systemname, dbfile) as session, zipf.open(f_name, 'r') as f_handle:
+                file_count = file_count + 1
                 header = next(f_handle).decode().strip('\r\n').split(',')
                 header.insert(0, 'ROW_ID')
                 for row in f_handle:
                     row = row.decode().strip('\r\n').split(',')
                     row.insert(0, next(row_id))
                     session.add(Trip(**dict(zip(header, row))))
-                print("File_loaded...! {}".format(f_name))
+                    record_count = record_count + 1
+                print("Records loaded: {} from File_{} ::: {}".format(record_count, file_count, f_name))

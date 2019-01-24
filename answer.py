@@ -12,9 +12,12 @@ from app.solutions import get_terminal_dist
 from app.solutions import get_neighbour_stations
 from app.solutions import get_trip_count
 
-data_path = r"C:\Users/ksrir/Development/OR604_precourse/app/data/" # Please change path relative to your system.
-systemname = r'SqliteDbEngine'
+# Please change path relative to your system.
+data_path = r"C:/Users/notme/Documents/Development/OR604_precourse/app/data/"
 dbfile = r'precourse_test.db' #Please give a new db file here.
+
+# CONSTANTS
+systemname = r'SqliteDbEngine'
 zip_file = r'Capital_BikeShare_Data.zip'
 location_file = r'Capital_Bike_Share_Locations.csv'
 

@@ -5,10 +5,10 @@ def check_input(inp):
     assert len(inp) == 2, 'Invalid number of values in point tuple'
     assert type(inp) is tuple, 'points must be in tuple'
 
-def haversine_(point1, point2, miles=True):
+def haversine_(point1, point2, unit='mi'):
     check_input(point1)
     check_input(point2)
-    return hv(point1, point2, miles)
+    return hv(point1, point2, unit)
 
 def vincenty_(point1,point2, miles=True):
     check_input(point1)

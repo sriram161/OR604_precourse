@@ -1,0 +1,4 @@
+conda install sqlalchemy
+pip install vincenty
+pip install haversine
+
